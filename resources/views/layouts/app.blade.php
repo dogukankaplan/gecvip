@@ -7,7 +7,6 @@
     <meta name="description"
         content="GEC - Kompost Makineleri | Gıda atığı yönetimi için otomatik kompost makineleri sağlayıcısı">
     <title>@yield('title', 'GEC - Yeşil Girişim & Co | Kompost Makineleri')</title>
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favico.ico') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
