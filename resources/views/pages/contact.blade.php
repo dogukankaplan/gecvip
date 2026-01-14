@@ -192,43 +192,61 @@
     <section class="section contact-form-section">
         <div class="container">
             <div class="contact-form-wrapper">
-                <form id="contactForm" class="contact-form-grid">
+                @if(session('success'))
+                    <div
+                        style="background: #d4edda; color: #155724; padding: 15px; border-radius: 6px; margin-bottom: 20px; text-align: center;">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if($errors->any())
+                    <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                        <ul style="margin: 0; padding-left: 20px;">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('contact.submit') }}" method="POST" class="contact-form-grid">
                     @csrf
                     <div class="form-group full-width">
                         <label for="name">Name: <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" required>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name"
+                            value="{{ old('name') }}" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email: <span class="required">*</span></label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
-                                required>
+                                value="{{ old('email') }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Cell Phone: <span class="required">*</span></label>
+                            <label for="phone">Cell Phone:</label>
                             <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number"
-                                required>
+                                value="{{ old('phone') }}">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="company">Company: <span class="required">*</span></label>
+                            <label for="company">Company:</label>
                             <input type="text" id="company" name="company" class="form-control" placeholder="Enter Company"
-                                required>
+                                value="{{ old('company') }}">
                         </div>
                         <div class="form-group">
-                            <label for="country">Country: <span class="required">*</span></label>
+                            <label for="country">Country:</label>
                             <input type="text" id="country" name="country" class="form-control" placeholder="Enter Country"
-                                required>
+                                value="{{ old('country') }}">
                         </div>
                     </div>
 
                     <div class="form-group full-width">
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" class="form-control" rows="5"
-                            placeholder="Enter Your Message"></textarea>
+                            placeholder="Enter Your Message">{{ old('message') }}</textarea>
                     </div>
 
                     <div class="form-submit">

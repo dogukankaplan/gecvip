@@ -7,6 +7,7 @@
     <meta name="description"
         content="GEC - Kompost Makineleri | Gıda atığı yönetimi için otomatik kompost makineleri sağlayıcısı">
     <title>@yield('title', 'GEC - Yeşil Girişim & Co | Kompost Makineleri')</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
