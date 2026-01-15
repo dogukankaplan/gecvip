@@ -25,7 +25,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
             <span></span>
             <span></span>
             <span></span>

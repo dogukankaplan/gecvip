@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenu = document.getElementById("mobileMenu");
 
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener("click", function () {
+        mobileMenuBtn.addEventListener("click", function (e) {
+            e.preventDefault();
             this.classList.toggle("active");
             mobileMenu.classList.toggle("active");
         });
